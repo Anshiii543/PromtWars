@@ -1,0 +1,13 @@
+{
+  "name": "healthsetu-ai",
+  "version": "1.0.0",
+  "description": "Smart Health Centre & Supply Chain Management System",
+  "main": "PW1.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "index.html"
+  },
+  "keywords": ["healthtech", "ai", "phc", "supply-chain", "accessibility"],
+  "author": "Anshika Mishra",
+  "license": "MIT"
+}
