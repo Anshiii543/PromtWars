@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthSetu AI | Smart Health Management</title>
+  <link rel="stylesheet" href="PW.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>✚ HealthSetu <span>AI</span></h2>
+    <p class="side-label" data-i18n="mainMenu">MAIN MENU</p>
+    <a class="active" href="#dashboard" data-i18n="dashboard">▦ Dashboard</a>
+    <a href="#medicines" data-i18n="medicineStock">✚ Medicine Stock</a>
+    <a href="#patients" data-i18n="patientFootfall">♧ Patient Footfall</a>
+    <a href="#resources" data-i18n="bedsTests">▣ Beds & Tests</a>
+    <a href="#doctors" data-i18n="doctorAttendance">♙ Doctor Attendance</a>
+    <a href="#insights" data-i18n="aiInsights">✧ AI Insights</a>
+    <div class="side-bottom" data-i18n="sideFooter">Smart healthcare for everyone.<br>District Health Network</div>
+  </aside>
+
+  <main id="dashboard">
+    <header>
+      <div>
+        <p class="eyebrow" data-i18n="districtHeader">DISTRICT HEALTH NETWORK</p>
+        <h1 data-i18n="overviewHeading">Health Overview</h1>
+        <p class="muted" data-i18n="overviewSub">Monitor centres. Predict shortages. Improve care.</p>
+      </div>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <span id="offlineStatus" style="font-size: 12px; padding: 5px 10px; background: #e2f0d9; color: #385723; border-radius: 4px;" data-i18n="offlineText">🟢 Online (Synced)</span>
+        <button id="voiceBtn" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #ccc; background: #f8f9fa; cursor: pointer;">🎙️ <span data-i18n="voiceBtnText">Voice Assistant</span></button>
+        <button id="languageBtn">हिंदी / EN</button>
+      </div>
+    </header>
+
+    <section class="welcome">
+      <div>
+        <p class="eyebrow light" data-i18n="bannerEyebrow">SMART HEALTH • AI-POWERED</p>
+        <h2 data-i18n="bannerTitle">Better resources. Better healthcare.</h2>
+        <p data-i18n="bannerSub">One dashboard to monitor health centres across your district.</p>
+      </div>
+      <div class="welcome-icon">✚</div>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card">
+        <p data-i18n="statCentres">Health Centres</p><h2 id="centreCount">12</h2>
+        <small data-i18n="statCentresSub">PHCs & CHCs monitored</small>
+      </article>
+      <article class="stat-card">
+        <p data-i18n="statPatients">Patients Today</p><h2>1,284</h2>
+        <small class="positive" data-i18n="statPatientsSub">↑ 8% vs previous day</small>
+      </article>
+      <article class="stat-card">
+        <p data-i18n="statBeds">Available Beds</p><h2>86 <span>/ 120</span></h2>
+        <small data-i18n="statBedsSub">Across all demo centres</small>
+      </article>
+      <article class="stat-card warning-card">
+        <p data-i18n="statAlerts">Stock Alerts</p><h2 id="alertCount">3</h2>
+        <small class="negative" data-i18n="statAlertsSub">Require attention</small>
+      </article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel" id="medicines">
+        <div class="panel-heading">
+          <div><h3 data-i18n="medMonitorTitle">Medicine Stock Monitor</h3>
+          <p data-i18n="medMonitorSub">Illustrative sample inventory</p></div>
+          <span class="tag" data-i18n="liveDemoTag">LIVE DEMO</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th data-i18n="thMedicine">Medicine</th><th data-i18n="thCentre">Centre</th><th data-i18n="thStock">Stock</th><th data-i18n="thStatus">Status</th></tr></thead>
+            <tbody id="medicineTable"></tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="panel" id="insights">
+        <div class="panel-heading">
+          <div><h3 data-i18n="aiInsightsTitle">AI Health Insights</h3>
+          <p data-i18n="aiInsightsSub">Rule-based demo recommendations</p></div>
+          <span class="ai-icon">✧ AI</span>
+        </div>
+        <div id="aiInsights"></div>
+        <button class="primary-btn" id="analyzeBtn">✧ <span data-i18n="analyzeBtnText">Analyze Resources</span></button>
+      </article>
+    </section>
+
+    <section class="content-grid lower-grid">
+      <article class="panel" id="resources">
+        <div class="panel-heading"><div><h3 data-i18n="centreStatusTitle">Centre Resource Status</h3>
+        <p data-i18n="centreStatusSub">Sample district facilities</p></div></div>
+        <div id="centreList"></div>
+      </article>
+      <article class="panel" id="patients">
+        <div class="panel-heading"><div><h3 data-i18n="footfallTitle">Patient Footfall</h3>
+        <p data-i18n="footfallSub">Sample daily patient count</p></div></div>
+        <div class="footfall">
+          <div><span>Mon</span><i style="height:45%"></i></div>
+          <div><span>Tue</span><i style="height:62%"></i></div>
+          <div><span>Wed</span><i style="height:54%"></i></div>
+          <div><span>Thu</span><i style="height:76%"></i></div>
+          <div><span>Fri</span><i style="height:88%"></i></div>
+          <div><span>Sat</span><i style="height:67%"></i></div>
+          <div><span>Sun</span><i style="height:38%"></i></div>
+        </div>
+        <p class="muted" data-i18n="footfallFootnote">Illustrative weekly trend — not actual hospital data.</p>
+      </article>
+    </section>
+
+    <section class="panel attendance" id="doctors">
+      <h3 data-i18n="docTitle">Doctor Attendance & Test Availability</h3>
+      <p data-i18n="docSub">Demo status — update these records when actual facility data is available.</p>
+      <div class="status-row"><span data-i18n="docRow1">Doctor attendance records</span><b class="status-ok">9 / 12 reported</b></div>
+      <div class="status-row"><span data-i18n="docRow2">Diagnostic test facilities operational</span><b class="status-ok">10 / 12 reported</b></div>
+      <div class="status-row"><span data-i18n="docRow3">Centres requiring data verification</span><b class="status-warn">3 centres</b></div>
+    </section>
+
+    <footer data-i18n="footerText">HealthSetu AI · Hackathon Prototype · Uses illustrative demo data</footer>
+  </main>
+
+  <script src="PW1.js"></script>
+</body>
+</html>
