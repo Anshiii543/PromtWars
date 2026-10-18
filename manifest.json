@@ -1,0 +1,9 @@
+{
+  "short_name": "HealthSetu",
+  "name": "HealthSetu AI Health System",
+  "icons": [],
+  "start_url": "./index.html",
+  "background_color": "#176b55",
+  "theme_color": "#176b55",
+  "display": "standalone"
+}
