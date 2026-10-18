@@ -507,3 +507,24 @@ footer {
     font-size: 11px;
   }
 }
+/* --- Smooth Section Popup & Hover Effect --- */
+section, .panel, .ai-predictive-box {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+section:hover, .panel:hover {
+    transform: translateY(-4px) scale(1.008);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    border-color: #38bdf8 !important;
+}
+
+/* Active Pop-up Class triggered via JS */
+.section-popup-active {
+    animation: popupBounce 0.5s ease forwards;
+}
+
+@keyframes popupBounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); box-shadow: 0 15px 35px rgba(56, 189, 248, 0.25); }
+    100% { transform: scale(1); }
+}
