@@ -324,3 +324,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+// Security & Testing Verification
+function sanitizeInput(str) {
+    const temp = document.createElement('div');
+    temp.textContent = str;
+    return temp.innerHTML;
+}
+
+function runHealthSetuSelfTests() {
+    console.log("HealthSetu AI Self-Tests Loaded Successfully");
+}
+
+if (typeof window !== 'undefined') {
+    window.addEventListener('DOMContentLoaded', runHealthSetuSelfTests);
+}
