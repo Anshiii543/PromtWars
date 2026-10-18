@@ -528,3 +528,18 @@ section:hover, .panel:hover {
     50% { transform: scale(1.02); box-shadow: 0 15px 35px rgba(56, 189, 248, 0.25); }
     100% { transform: scale(1); }
 }
+/* --- Smooth Section Popup & Hover Highlight Effect --- */
+section, .panel, article, .ai-predictive-box {
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer;
+}
+
+section:hover, .panel:hover, article:hover, .ai-predictive-box:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 14px 30px rgba(56, 189, 248, 0.2) !important;
+    border-color: #38bdf8 !important;
+}
+
+section:active, .panel:active, article:active {
+    transform: scale(0.99);
+}
